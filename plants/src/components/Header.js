@@ -6,8 +6,10 @@ const Header = () => {
             <div className="main-info">
                 <h1>Find Plant Care Near You</h1>
                 <h2>Search Form Placeholder</h2>
-                <button className="btn-main-offer">Contact Me</button>
+                <button className="btn-main-offer">Search</button>
             </div>
         </div>
     )
 }
+
+export default Header

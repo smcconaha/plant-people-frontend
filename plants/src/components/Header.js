@@ -6,7 +6,10 @@ const Header = () => {
             <div className="main-info">
                 <h1>Find Plant Care Near You</h1>
                 <h2>Search Form Placeholder</h2>
-                <button className="btn-main-offer">Search</button>
+                <div id="search-container">
+                    
+                    <button className="btn-main-offer">Search</button>
+                </div>
             </div>
         </div>
     )

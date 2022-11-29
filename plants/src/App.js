@@ -1,12 +1,13 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import Header from './components/Header';
 
 function App() {
   return (
     <>
+      <Navbar />
       <Header />
     </>
   );

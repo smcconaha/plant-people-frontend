@@ -29,12 +29,10 @@
 
 .main-info h1, .main-info h2 {
   color: var(--main-text-color);
-  text-transform: uppercase;
 }
 
 .btn-main-offer {
   border: 1px solid#FC9E2D;
-  text-transform: uppercase;
   border-radius: 0;
   padding: 0.625rem 0.75rem 0.75rem 0.75rem;
   color: #fff;
@@ -46,3 +44,30 @@
   background-color: #FC9E2D;
   color: #fff;
 }
+
+/*NAV BAR LINKS*/
+nav a.nav-link {
+  font-size: 0.8rem;
+  letter-spacing: 0.0375rem;
+  cursor: pointer;
+  border-top: 0.1875rem solid rgba(222, 20, 20, 0);
+}
+
+nav ul li {
+  text-transform: uppercase;
+}
+
+.navbar-nav > li > a {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+  color: #fff !important;
+  border-top: 0.1875rem solid rgba(255,255,255,0);
+}
+
+/* .navbar-nav > li > a.active, .navbar-nav > li > a.active:focus {
+  border-top: 0.1875rem solid #26B9FF;
+}
+
+.navbar-nav > li > a:hover {
+  border-top: 0.1875rem solid #26B9FF;
+} */

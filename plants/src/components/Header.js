@@ -1,6 +1,48 @@
 import React from 'react';
 
-const Header = () => {
+const Header = (props) => {
+    let data = [...props.searchData]
+    let location = []
+    let standard = []
+    let specialized = []
+    for (const entry of data) {
+        if (entry.service_type == 'location') {
+            location.push(
+                <>
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
+                        <label className="form-check-label" for="flexCheckDefault">
+                            {entry.name}
+                        </label>
+                    </div>
+                </>
+            )
+        }
+        if (entry.service_type == 'standard') {
+            standard.push(
+                <>
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
+                        <label className="form-check-label" for="flexCheckDefault">
+                            {entry.name}
+                        </label>
+                    </div>
+                </>
+            )
+        }
+        if (entry.service_type == 'specialized') {
+            specialized.push(
+                <>
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
+                        <label className="form-check-label" for="flexCheckDefault">
+                            {entry.name}
+                        </label>
+                    </div>
+                </>
+            )
+        }
+    }
     return (
         <div className="header-wrapper">
             <div className="main-info">
@@ -10,50 +52,11 @@ const Header = () => {
                     <div className="card-body">
                         <h5 className="card-title">What customized car do your plants need?</h5>
                         <p className="card-text">Do you need boarding or drop-in service?</p>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" id="flexCheckDefault" value="Plant Boarding"/>
-                            <label className="form-check-label" for="flexCheckDefault">
-                                Plant Boarding
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" id="flexCheckChecked" value="Plant Drop In"/>
-                            <label className="form-check-label" for="flexCheckDefault">
-                                Plant Drop In
-                            </label>
+                            {location}
                         <p className="card-text">What standard services do you need?</p>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" id="flexCheckChecked" value="Watering"/>
-                            <label className="form-check-label" for="flexCheckDefault">
-                                Watering
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" id="flexCheckChecked" value="Relocation"/>
-                            <label className="form-check-label" for="flexCheckDefault">
-                                Relocation
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" id="flexCheckChecked" value="Fertilization"/>
-                            <label className="form-check-label" for="flexCheckDefault">
-                                Fertilization
-                            </label>
-                        <p className="card-text">What standard services do you need?</p>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" id="flexCheckChecked" value="Pesticide Application"/>
-                            <label className="form-check-label" for="flexCheckDefault">
-                                Pesticide Application
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" id="flexCheckChecked" value="Fungicide Application"/>
-                            <label className="form-check-label" for="flexCheckDefault">
-                                Fungicide Application
-                            </label>
-                        </div>
+                            {standard}
+                        <p className="card-text">What specialized services do you need?</p>
+                            {specialized}
                         <a href="#" className="searchBtn">Search</a>
                     </div>
                 </div>

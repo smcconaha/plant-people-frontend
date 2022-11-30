@@ -20,9 +20,8 @@ function App() {
           setData(response.data);
       });
   }, []);
-  console.log()
   const objComp = {
-    Home: <><Navbar /> <Header /> <Service serviceData={data}/></>,
+    Home: <><Navbar /> <Header searchData={data} /> <Service serviceData={data}/></>,
   }
 
   for(let key in objComp) {

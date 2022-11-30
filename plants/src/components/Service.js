@@ -1,11 +1,8 @@
 import React from 'react';
 
 const Service = (props) => {
-
     let data = [...props.serviceData]
-
     let items = []
-
     for (const item of data) {
         items.push(
             <>
@@ -14,7 +11,6 @@ const Service = (props) => {
             </>
         )
     }
-
     return (
         <>
         <div id="serviceContainer" className='container py-5'>

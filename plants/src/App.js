@@ -18,24 +18,27 @@ function App() {
       });
   }, []);
 
-    return (
-      <>
-        <Navbar handleClick={setPage}/>
-        {page === 'Home' && 
-          <Header /> &&
-          <Service serviceData={data}/>
-        }
-        {page === 'Sign Up' && 
-          <Header />
-        }
-        {page === 'Sign In' && 
-          <Header />
-        }
-        {page === 'Help' && 
-          <Header />
-        }
-      </>
-    );
+  return (
+    <>
+      <Navbar />
+      <Header />
+      <Service />
+      {/* <Navbar handleClick={setPage}/>
+      {page === 'Home' && 
+        <Header /> &&
+        <Service serviceData={data}/>
+      }
+      {page === 'Sign Up' && 
+        <Header />
+      }
+      {page === 'Sign In' && 
+        <Header />
+      }
+      {page === 'Help' && 
+        <Header />
+      } */}
+    </>
+  );
 }
 
 export default App;

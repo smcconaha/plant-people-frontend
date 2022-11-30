@@ -9,34 +9,36 @@ import Service from './components/Service';
 
 function App() {
   const baseURL = "https://8000-smcconaha-plantpeopleba-iy6u095z2ql.ws-us77.gitpod.io/config/services/"
-  const [page, setPage] = useState ('Home');
-  const [data, setData] = useState([]);
+  const activePage = 'Home'
   
+  const componentArr = []
+  const [page, setPage] = useState (activePage);
+  const [data, setData] = useState([]);
+
   useEffect(() => {
       axios.get(baseURL).then((response) => {
           setData(response.data);
       });
   }, []);
+  console.log()
+  const objComp = {
+    Home: <><Navbar /> <Header /> <Service serviceData={data}/></>,
+  }
+
+  for(let key in objComp) {
+    if(key == page) {
+      componentArr.push(objComp[key])
+    }
+  }
 
   return (
     <>
-      <Navbar />
-      <Header />
-      <Service />
-      {/* <Navbar handleClick={setPage}/>
-      {page === 'Home' && 
-        <Header /> &&
-        <Service serviceData={data}/>
-      }
-      {page === 'Sign Up' && 
-        <Header />
-      }
-      {page === 'Sign In' && 
-        <Header />
-      }
-      {page === 'Help' && 
-        <Header />
-      } */}
+      <Navbar
+      page={page}
+      setPage={setPage}
+      />
+
+      <div>{componentArr}</div>
     </>
   );
 }

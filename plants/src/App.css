@@ -2,6 +2,7 @@
 
 :root {
   --main-text-color: #FFFFFF;
+  --green-accent-color: #357725;
 }
 
 .body {
@@ -35,18 +36,23 @@
   color: var(--main-text-color);
 }
 
-.btn-main-offer {
-  border: 1px solid#FC9E2D;
+.searchBtn {
+  border: 1px solid var(--green-accent-color);
+  background-color: var(--green-accent-color);
   border-radius: 0;
   padding: 0.625rem 0.75rem 0.75rem 0.75rem;
-  color: #fff;
+  color: var(--main-text-color);
   margin: 2rem;
 }
 
-.btn-main-offer:hover {
+.searchBtn:hover {
   text-decoration: none;
-  background-color: #FC9E2D;
-  color: #fff;
+  background-color: #235816;
+  color: var(---main-text-color);
+}
+
+.card-text, .card-title {
+  font-weight: bold;
 }
 
 /*NAV BAR LINKS*/

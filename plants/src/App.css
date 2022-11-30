@@ -4,6 +4,10 @@
   --main-text-color: #FFFFFF;
 }
 
+.body {
+  text-align: center;
+}
+
 /*Header*/
 
 .header-wrapper {
@@ -71,3 +75,9 @@ nav ul li {
 .navbar-nav > li > a:hover {
   border-top: 0.1875rem solid #26B9FF;
 } */
+
+/*Service Section*/
+
+.service {
+  color: var(black);
+}

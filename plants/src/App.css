@@ -95,3 +95,8 @@ nav ul li {
 .serviceDesc {
   font-weight: 400;
 }
+
+.form-check-input:checked {
+  background-color: green !important;
+  border-color: green !important;
+}

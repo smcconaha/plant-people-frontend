@@ -87,3 +87,11 @@ nav ul li {
 .service {
   color: var(black);
 }
+
+.serviceTitle {
+  font-weight: 700;
+}
+
+.serviceDesc {
+  font-weight: 400;
+}

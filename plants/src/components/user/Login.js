@@ -28,7 +28,7 @@ const Login = () => {
   }
 
   return (
-    <div className="c-form">
+    <div className="pt-5 mt-5">
       <form onSubmit={handleLogin}>
         <div>
           <label htmlFor="username">Username:</label>

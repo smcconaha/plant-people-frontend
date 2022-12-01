@@ -17,8 +17,8 @@ const Service = (props) => {
     for (const item of data) {
         items.push(
             <>
-                <p>{item.name}</p>
-                <p>{item.description}</p>
+                <p className="serviceTitle">{item.name}</p>
+                <p className="serviceDesc">{item.description}</p>
             </>
         )
     }

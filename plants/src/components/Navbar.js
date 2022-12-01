@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalState } from '../context/GlobalState';
+import authService from '../services/auth.service';
 
 
 function Navbar () {
   const [ state, dispatch ] = useGlobalState();
   
   return (
+    <div>
     <nav className="navbar navbar-expand-lg bg-dark fixed-top">
         <div className="container">
             <a className="navbar-brand" href="#">Add Logo?</a>
@@ -39,6 +41,17 @@ function Navbar () {
                       </li>
                     )
                   }
+                  {
+                    state.currentUser && (
+                      <li className="nav-item">
+                        <Link to='/' className="nav-link" 
+                          onClick={() => {
+                            localStorage.clear()
+                            window.location.reload()
+                          }}>Log Out</Link>
+                      </li>
+                    )
+                  }
                   <li className="nav-item">
                     <Link to="#" className="nav-link">Help</Link>
                   </li>
@@ -46,6 +59,7 @@ function Navbar () {
             </div>
         </div>
     </nav>
+    </div>
   )
 }
 

@@ -1,6 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useGlobalState } from '../context/GlobalState';
 
-const Navbar = (props) => {
+
+function Navbar () {
+  const [ state, dispatch ] = useGlobalState();
+  
   return (
     <nav className="navbar navbar-expand-lg bg-dark fixed-top">
         <div className="container">
@@ -9,20 +14,35 @@ const Navbar = (props) => {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                    <a href="#" className="nav-link active" aria-current="page" onClick={() => props.handleClick('Home')}>Home</a>
-                </li>
-                <li className="nav-item">
-                    <a href="#" className="nav-link" onClick={() => props.handleClick('Sign Up')}>Sign Up</a>
-                </li>
-                <li className="nav-item">
-                    <a href="#" className="nav-link" onClick={() => props.handleClick('Sign In')}>Sign In</a>
-                </li>
-                <li className="nav-item">
-                <a href="#" className="nav-link" onClick={() => props.handleClick('Help')}>Help</a>
-                </li>
-            </ul>
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link">Home</Link>
+                  </li>
+                  {
+                    !state.currentUser && (
+                      <li className="nav-item">
+                        <Link to="/login" className="nav-link">Sign In</Link>
+                      </li>
+                    )
+                  }
+                  {
+                    !state.currentUser && (
+                      <li className="nav-item">
+                        <Link to="/register" className="nav-link">Sign Up</Link>
+                      </li>
+                    )
+                  }
+                  {
+                    state.currentUser && (
+                      <li className="nav-item">
+                        <Link to="/profile" className="nav-link">Profile</Link>
+                      </li>
+                    )
+                  }
+                  <li className="nav-item">
+                    <Link to="#" className="nav-link">Help</Link>
+                  </li>
+              </ul>
             </div>
         </div>
     </nav>

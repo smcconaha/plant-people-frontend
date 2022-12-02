@@ -1,0 +1,102 @@
+/*Variables*/
+
+:root {
+  --main-text-color: #FFFFFF;
+  --green-accent-color: #357725;
+}
+
+.body {
+  text-align: center;
+}
+
+/*Header*/
+
+.header-wrapper {
+  position: relative;
+  background: url(./images/home_background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+
+.main-info {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 7.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main-info h1, .main-info h2 {
+  color: var(--main-text-color);
+}
+
+.searchBtn {
+  border: 1px solid var(--green-accent-color);
+  background-color: var(--green-accent-color);
+  border-radius: 0;
+  padding: 0.625rem 0.75rem 0.75rem 0.75rem;
+  color: var(--main-text-color);
+  margin: 2rem;
+}
+
+.searchBtn:hover {
+  text-decoration: none;
+  background-color: #235816;
+  color: var(---main-text-color);
+}
+
+.card-text, .card-title {
+  font-weight: bold;
+}
+
+/*NAV BAR LINKS*/
+nav a.nav-link {
+  font-size: 0.8rem;
+  letter-spacing: 0.0375rem;
+  cursor: pointer;
+  border-top: 0.1875rem solid rgba(222, 20, 20, 0);
+}
+
+nav ul li {
+  text-transform: uppercase;
+}
+
+.navbar-nav > li > a {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+  color: #fff !important;
+  border-top: 0.1875rem solid rgba(255,255,255,0);
+}
+
+/* .navbar-nav > li > a.active, .navbar-nav > li > a.active:focus {
+  border-top: 0.1875rem solid #26B9FF;
+}
+
+.navbar-nav > li > a:hover {
+  border-top: 0.1875rem solid #26B9FF;
+} */
+
+/*Service Section*/
+
+.service {
+  color: var(black);
+}
+
+.serviceTitle {
+  font-weight: 700;
+}
+
+.serviceDesc {
+  font-weight: 400;
+}
+
+.form-check-input:checked {
+  background-color: green !important;
+  border-color: green !important;
+}

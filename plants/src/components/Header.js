@@ -10,8 +10,8 @@ const Header = (props) => {
             location.push(
                 <>
                     <div className="form-check">
-                        <input className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
-                        <label className="form-check-label" for="flexCheckDefault">
+                        <input key={entry.id} className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
+                        <label  key={entry.name.id} className="form-check-label" for="flexCheckDefault">
                             {entry.name}
                         </label>
                     </div>
@@ -22,8 +22,8 @@ const Header = (props) => {
             standard.push(
                 <>
                     <div className="form-check">
-                        <input className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
-                        <label className="form-check-label" for="flexCheckDefault">
+                        <input  key={entry.id} className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
+                        <label  key={entry.name.id}  className="form-check-label" for="flexCheckDefault">
                             {entry.name}
                         </label>
                     </div>
@@ -34,8 +34,8 @@ const Header = (props) => {
             specialized.push(
                 <>
                     <div className="form-check">
-                        <input className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
-                        <label className="form-check-label" for="flexCheckDefault">
+                        <input  key={entry.id} className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
+                        <label  key={entry.name.id} className="form-check-label" for="flexCheckDefault">
                             {entry.name}
                         </label>
                     </div>

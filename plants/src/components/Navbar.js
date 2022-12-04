@@ -52,9 +52,13 @@ function Navbar () {
                       </li>
                     )
                   }
-                  <li className="nav-item">
-                    <Link to="#" className="nav-link">Help</Link>
-                  </li>
+                  {
+                    !state.currentUser && (
+                        <li className="nav-item">
+                            <Link to="/help" className="nav-link">Help</Link>
+                        </li>
+                    )
+                  }
               </ul>
             </div>
         </div>

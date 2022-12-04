@@ -12,6 +12,7 @@ import Login from './components/user/Login';
 import Register from './components/user/Register';
 import Profile from './components/user/Profile';
 import Service from './components/Service';
+import Help from './components/Help';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,8 +24,8 @@ root.render(
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="help" element={<Help />} />
         </Route>
-
       </Routes>
     </Router>
   </React.StrictMode>

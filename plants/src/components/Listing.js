@@ -18,15 +18,6 @@ const Listing = () => {
                 <div className='row'>
                     <div className='col-md-6 col-xs-12'>
                         <input
-                            id='service'
-                            type='text'
-                            className='form-control'
-                            placeholder='Select Services Offered'
-                            name='user_service'
-                            required
-                        />
-                        <div className='line'></div>
-                        <input
                             id='address_line_one'
                             type='text'
                             className='form-control'
@@ -69,13 +60,24 @@ const Listing = () => {
                         />
                         <div className='line'></div>
                         <input
-                            id='status'
+                            id='service'
                             type='text'
                             className='form-control'
+                            placeholder='Select Services Offered'
+                            name='user_service'
+                            required
+                        />
+                        <div className='line'></div>
+                        <input
+                            id='flexCheckChecked'
+                            value='Plant Boarding'
+                            type='checkbox'
+                            className='form-check-input'
                             placeholder='Select Listing Status'
                             name='listing_status'
                             required
                         />
+                        <label className="form-check-label" for="flexCheckDefault">Plant Boarding</label>
                         <div className='line'></div>
                     </div>
                     <div className='col-md-6 col-xs-12'>

@@ -1,12 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalState } from '../context/GlobalState';
-import authService from '../services/auth.service';
+import AuthService from '../services/auth.service';
 import largeLogo from './../images/full_logo.png';
+import { useNavigate } from 'react-router-dom';
 
 
 function Navbar () {
   const [ state, dispatch ] = useGlobalState();
+  let navigate = useNavigate();
+
+  function Logout() {
+    navigate("/");
+    AuthService.logout();
+    window.location.reload();
+  }
   
   return (
     <div>
@@ -45,11 +53,8 @@ function Navbar () {
                   {
                     state.currentUser && (
                       <li className="nav-item">
-                        <Link to='/' className="nav-link" 
-                          onClick={() => {
-                            localStorage.clear()
-                            window.location.reload()
-                          }}>Log Out</Link>
+                        <a href="#" className="nav-link" 
+                          onClick={Logout}>Log Out</a>
                       </li>
                     )
                   }

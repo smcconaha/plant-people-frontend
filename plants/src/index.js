@@ -13,6 +13,7 @@ import Register from './components/user/Register';
 import Profile from './components/user/Profile';
 import Service from './components/Service';
 import Help from './components/Help';
+import Listing from './components/Listing';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +26,7 @@ root.render(
           <Route path="register" element={<Register />} />
           <Route path="profile" element={<Profile />} />
           <Route path="help" element={<Help />} />
+          <Route path="listing" element={<Listing />} />
         </Route>
       </Routes>
     </Router>

@@ -62,7 +62,7 @@ const Login = () => {
                     />
                     <label htmlFor="floatingPassword">Password</label>
                   </div>
-                  <input className="w-100 btn btn-lg btn-primary"
+                  <input className="w-100 btn btn-lg btn-success"
                     type="submit"
                     value="Sign in"
                   />

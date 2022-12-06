@@ -100,3 +100,24 @@ nav ul li {
   background-color: green !important;
   border-color: green !important;
 }
+
+/*Profile*/
+
+.profile-img {
+  width: 16rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  border: 1px solid black;
+}
+
+.profile-heading {
+  color:black;
+  text-transform: uppercase;
+}
+
+.photo-wrap {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

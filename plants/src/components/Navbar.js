@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalState } from '../context/GlobalState';
 import authService from '../services/auth.service';
+import largeLogo from './../images/full_logo.png';
 
 
 function Navbar () {
@@ -11,7 +12,7 @@ function Navbar () {
     <div>
     <nav className="navbar navbar-expand-lg bg-dark fixed-top">
         <div className="container">
-            <a className="navbar-brand" href="#">Add Logo?</a>
+            <img className="navbar-brand" src={largeLogo} alt width="100" height="80"></img>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>

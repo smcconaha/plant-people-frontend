@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import { Link } from 'react-router-dom';
 import { useGlobalState } from "../../context/GlobalState";
 import smallLogo from './../../images/small_logo.png';
 
@@ -20,6 +21,8 @@ const Profile = () => {
                     <p>First Name: {state.currentUser.first_name}</p>
                     <p>Last Name: {state.currentUser.last_name}</p>
                     <p>Email Address: {state.currentUser.email}</p>
+                    <h1 className='listing-offer'>Do you want to become a caregiver?</h1>
+                    <Link to="/listing" className="listingBtn w-100 btn btn-lg btn-success">Create Listing</Link>
                 </div>
             </div>
         </div>

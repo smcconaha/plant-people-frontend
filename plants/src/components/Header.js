@@ -91,7 +91,6 @@ const Header = (props) => {
                             {standard}
                         <p className="card-text">What specialized services do you need?</p>
                             {specialized}
-                        
                         <a href="#" className="searchBtn">Search</a>
                     </div>
                 </div>

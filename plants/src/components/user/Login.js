@@ -28,37 +28,52 @@ const Login = () => {
   }
 
   return (
-    <div className="pt-5 mt-5">
-      <form onSubmit={handleLogin}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-6">
+          <div className="text-center pt-5 mt-5">
+            <body className="text-center">
+              <main className="form-signin w-100 m-auto">
+                <form onSubmit={handleLogin}>
+                  <img className="mb-4" src="#" alt width="72" height="57"></img>
+                  <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+                  <div className="form-floating">
+                    <input
+                      className="form-control"
+                      placeholder="Username"
+                      type="text"
+                      id="floatingInput"
+                      name="username"
+                      onChange={(e) => setUsername(e.target.value)}
+                      required
+                    />
+                    <label htmlFor="floatingInput">Username</label>
+                  </div>
+                  <div classname="form-floating">
+                    <input
+                      className="form-control"
+                      placeholder="Password"
+                      type="password"
+                      id="floatingPassword"
+                      name="password"
+                      minLength="8"
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                    <label htmlFor="floatingPassword">Password</label>
+                  </div>
+                  <input className="w-100 btn btn-lg btn-primary"
+                    type="submit"
+                    value="Sign in"
+                  />
+                </form>
+              </main>
+            </body>
+          </div>
         </div>
-        <div>
-          <label htmlFor="pass">Password</label>
-          <input
-            type="password"
-            id="pass"
-            name="password"
-            minLength="8"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <input
-          type="submit"
-          value="Sign in"
-        />
-      </form>
+      </div>
     </div>
   )
-
 }
 
 export default Login

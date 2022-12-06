@@ -6,42 +6,42 @@ function Listing() {
   const [ state, dispatch ] = useGlobalState();
   
   return (
-    <main class="container">
-    <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-        <div class="col-md-6 px-0">
-        <h1 class="display-4 fst-italic"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Longer featured post title</font></font></h1>
-        <p class="lead my-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Several multiple lines of text cross-check, to quickly and efficiently inform new readers about the most interesting things in the contents of this post.</font></font></p>
-        <p class="lead mb-0"><a href="#" class="text-white fw-bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Continue reading...</font></font></a></p>
+    <main className="container">
+    <div className="p-4 p-md-5 mb-4 rounded text-bg-dark">
+        <div className="col-md-6 px-0">
+        <h1 className="display-4 fst-italic"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Longer featured post title</font></font></h1>
+        <p classNames="lead my-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Several multiple lines of text cross-check, to quickly and efficiently inform new readers about the most interesting things in the contents of this post.</font></font></p>
+        <p className="lead mb-0"><a href="#" class="text-white fw-bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Continue reading...</font></font></a></p>
         </div>
     </div>
 
-    <div class="row mb-2">
-        <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">the scientist</font></font></strong>
-            <h3 class="mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Featured post</font></font></h3>
-            <div class="mb-1 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">November 12</font></font></div>
-            <p class="card-text mb-auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This is a broader card with supporting text below as a natural introduction to additional content.</font></font></p>
-            <a href="#" class="stretched-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Read on</font></font></a>
+    <div className="row mb-2">
+        <div className="col-md-6">
+        <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div className="col p-4 d-flex flex-column position-static">
+            <strong className="d-inline-block mb-2 text-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">the scientist</font></font></strong>
+            <h3 className="mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Featured post</font></font></h3>
+            <div className="mb-1 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">November 12</font></font></div>
+            <p className="card-text mb-auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This is a broader card with supporting text below as a natural introduction to additional content.</font></font></p>
+            <a href="#" className="stretched-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Read on</font></font></a>
             </div>
-            <div class="col-auto d-none d-lg-block">
-            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">صورة مصغرة</text></svg>
+            <div className="col-auto d-none d-lg-block">
+            <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">صورة مصغرة</text></svg>
 
             </div>
         </div>
         </div>
-        <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">the design</font></font></strong>
-            <h3 class="mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Job title</font></font></h3>
-            <div class="mb-1 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">November 11</font></font></div>
-            <p class="mb-auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This is a broader card with supporting text below as a natural introduction to additional content.</font></font></p>
-            <a href="#" class="stretched-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Read on</font></font></a>
+        <div className="col-md-6">
+        <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div className="col p-4 d-flex flex-column position-static">
+            <strong className="d-inline-block mb-2 text-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">the design</font></font></strong>
+            <h3 classNames="mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Job title</font></font></h3>
+            <div className="mb-1 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">November 11</font></font></div>
+            <p className="mb-auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This is a broader card with supporting text below as a natural introduction to additional content.</font></font></p>
+            <a href="#" className="stretched-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Read on</font></font></a>
             </div>
-            <div class="col-auto d-none d-lg-block">
-            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">صورة مصغرة</text></svg>
+            <div className="col-auto d-none d-lg-block">
+            <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">صورة مصغرة</text></svg>
 
             </div>
         </div>
@@ -49,14 +49,14 @@ function Listing() {
     </div>
 
     <div class="row">
-        <div class="col-md-8">
-        <h3 class="pb-4 mb-4 fst-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        <div className="col-md-8">
+        <h3 className="pb-4 mb-4 fst-italic border-bottom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
             from Firehose
         </font></font></h3>
 
-        <article class="blog-post">
-            <h2 class="blog-post-title mb-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Example of a post</font></font></h2>
-            <p class="blog-post-meta"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">January 1, 2021 by </font></font><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mark</font></font></a></p>
+        <article className="blog-post">
+            <h2 className="blog-post-title mb-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Example of a post</font></font></h2>
+            <p className="blog-post-meta"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">January 1, 2021 by </font></font><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mark</font></font></a></p>
 
             <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This blog post shows a few different types of content that are powered and designed with Bootstrap. </font><font style="vertical-align: inherit;">Body text, images, and code are fully supported.</font></font></p>
             <hr/>
@@ -116,23 +116,23 @@ function Listing() {
             <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Imagine that microbes will be the factories of the future, and that the food of the future will be made of air! </font><font style="vertical-align: inherit;">And that the year 2050 AD will be completely different from our world today. </font><font style="vertical-align: inherit;">It is a world without agriculture or raising animals for food! </font><font style="vertical-align: inherit;">It may sound fancy, but it's not impossible!</font></font></p>
         </article>
 
-        <nav class="blog-pagination" aria-label="Pagination">
-            <a class="btn btn-outline-primary rounded-pill" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Older posts</font></font></a>
-            <a class="btn btn-outline-secondary rounded-pill disabled"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Latest Posts</font></font></a>
+        <nav className="blog-pagination" aria-label="Pagination">
+            <a className="btn btn-outline-primary rounded-pill" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Older posts</font></font></a>
+            <a className="btn btn-outline-secondary rounded-pill disabled"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Latest Posts</font></font></a>
         </nav>
 
         </div>
 
-        <div class="col-md-4">
-        <div class="position-sticky" style="top: 2rem;">
-            <div class="p-4 mb-3 bg-light rounded">
-            <h4 class="fst-italic"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Around</font></font></h4>
-            <p class="mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">You came, so life came with you in all its varieties and colors: plants sprout, trees leaf and bloom, cats meow, the moon cries, sheep bleat, cows moo, and every pet calls on its pet. </font><font style="vertical-align: inherit;">Everything feels alive and forgets the worries of life, and only mentions the happiness of life. If time is a body, you are its soul, and if it is a lifetime, you are its youth.</font></font></p>
+        <div className="col-md-4">
+        <div className="position-sticky" style="top: 2rem;">
+            <div className="p-4 mb-3 bg-light rounded">
+            <h4 className="fst-italic"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Around</font></font></h4>
+            <p className="mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">You came, so life came with you in all its varieties and colors: plants sprout, trees leaf and bloom, cats meow, the moon cries, sheep bleat, cows moo, and every pet calls on its pet. </font><font style="vertical-align: inherit;">Everything feels alive and forgets the worries of life, and only mentions the happiness of life. If time is a body, you are its soul, and if it is a lifetime, you are its youth.</font></font></p>
             </div>
 
-            <div class="p-4">
-            <h4 class="fst-italic"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">archives</font></font></h4>
-            <ol class="list-unstyled mb-0">
+            <div className="p-4">
+            <h4 className="fst-italic"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">archives</font></font></h4>
+            <ol className="list-unstyled mb-0">
                 <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">March 2021</font></font></a></li>
                 <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">February 2021</font></font></a></li>
                 <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">January 2021</font></font></a></li>

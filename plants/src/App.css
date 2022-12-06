@@ -121,3 +121,49 @@ nav ul li {
   justify-content: center;
   align-items: center;
 }
+
+/*Listing Create*/
+/* 
+.listing input, .listing textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  border: 0;
+  border-bottom: 0.125rem solid #D4D1CD;
+  border-radius: 0;
+  color: #D4D1CD;
+  outline: 0 !important;
+  box-shadow: none !important;
+  margin-bottom: 1rem;
+  padding-left: 0 !important;
+} */
+
+.listing .container {
+  padding: 4rem 0;
+}
+
+.listing textarea {
+  height: 12.2rem !important;
+}
+
+.listing-create-btn {
+  margin: 1rem 0 0 0;
+  width: 100%;
+}
+
+.line {
+  position: relative;
+  top: -0.8rem;
+  width: 0;
+  height: 0.125rem;
+  background: red;
+  display: inline-block;
+}
+
+input.form-control {
+  margin: -0.3rem 0;
+}
+
+textarea.form-control {
+  margin: -0.3rem 0;
+}

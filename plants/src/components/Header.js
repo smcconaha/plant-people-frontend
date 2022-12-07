@@ -1,5 +1,6 @@
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
-import React, {useRef, useState} from "react";
+import axios from "axios";
+import React, {useEffect, useState} from "react";
 import usZips from 'us-zips';
 
 // function Map() {
@@ -28,6 +29,18 @@ import usZips from 'us-zips';
 
 const Header = (props) => {
     const [message, setMessage] = useState('');
+    const [search, setSearch] = useState({
+        search: '', //this is the zip code entered by user
+        listings: [], //this is the listings coming back
+    });
+
+    useEffect(() => {
+        axios.get(search + '/' + window.location.search).then((res) => {
+			const allListings = res.data;
+			setSearch({ listings: allListings });
+			console.log(res.data);
+        });
+    }, [setSearch]);    
     
     const handleChange = event => {
         setMessage(event.target.value);
@@ -91,6 +104,18 @@ const Header = (props) => {
                             {standard}
                         <p className="card-text">What specialized services do you need?</p>
                             {specialized}
+                        <form>
+                        {/* <form onSubmit={handleSearch}> */}
+                        <input
+                            id='zip_code'
+                            type='text'
+                            className='form-control'
+                            placeholder='Enter Zip Code'
+                            name='zip_code'
+                            onChange={(e) => handleChange('searchListings', e.target.value)}
+                            required
+                        />
+                        </form>
                         <a href="#" className="searchBtn">Search</a>
                     </div>
                 </div>

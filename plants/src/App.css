@@ -74,14 +74,6 @@ nav ul li {
   border-top: 0.1875rem solid rgba(255,255,255,0);
 }
 
-/* .navbar-nav > li > a.active, .navbar-nav > li > a.active:focus {
-  border-top: 0.1875rem solid #26B9FF;
-}
-
-.navbar-nav > li > a:hover {
-  border-top: 0.1875rem solid #26B9FF;
-} */
-
 /*Service Section*/
 
 .service {
@@ -123,22 +115,8 @@ nav ul li {
 }
 
 /*Listing Create*/
-/* 
-.listing input, .listing textarea {
-  width: 100%;
-  box-sizing: border-box;
-  resize: none;
-  border: 0;
-  border-bottom: 0.125rem solid #D4D1CD;
-  border-radius: 0;
-  color: #D4D1CD;
-  outline: 0 !important;
-  box-shadow: none !important;
-  margin-bottom: 1rem;
-  padding-left: 0 !important;
-} */
 
-.listing .container {
+.listing-container {
   padding: 4rem 0;
 }
 

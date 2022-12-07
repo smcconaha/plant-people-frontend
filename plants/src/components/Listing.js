@@ -1,17 +1,52 @@
 import React from 'react';
-import { useRef , useState} from 'react';
-import { useGlobalState } from '../context/GlobalState';
+import { useState } from 'react';
+import request from '../services/api.request'
 
 const Listing = () => {
-    // const [ state, dispatch ] = useGlobalState();
-    // const form = useRef();
-    const [service, setService] = useState('');
-
-    const handleChange = event => {
-        setService(event.target.value);
     
-        console.log('value is:', event.target.value);
-      }; 
+    const [listing, setListing] = useState({
+        body: "",
+        service: [],
+        address_line_one: "",
+        address_line_two: "",
+        city: "",
+        state: "",
+        zip_code: "",
+        country: "",
+        status: "",
+    })
+
+//Service array functionality
+    function handleService (e, service) {
+        if (e.target.checked) {
+            listing.service.push(e.target.value)
+        } else {
+            let deleteIndex = listing.service.indexOf(e.target.value)
+            listing.service.splice(deleteIndex, 1)
+        }
+        setListing(listing)
+    }
+
+    const handleChange = (key, value) => {
+        setListing({
+            ...listing,
+            [key]: value
+        })
+        console.log(listing)
+    }
+
+    async function handleListingCreate (e) {
+        e.preventDefault()
+        let options = {
+            data: {...listing},
+            url: `/listings/`,
+            method: 'POST',
+        } 
+        let resp = await request(options)
+        console.log(resp.data)
+        setListing(resp.data)
+    }
+
 
     const plant_service_list = [
         "Plant Boarding",
@@ -22,7 +57,7 @@ const Listing = () => {
         "Fungicide Application",
         "Fertilizer Application",
         "Pruning",
-        "Herbicide Application"
+        "Herbicide Application",
     ]
 
     let services = []
@@ -38,8 +73,8 @@ const Listing = () => {
                     type='checkbox'
                     className='form-check-input'
                     placeholder={service}
-                    name='listing_status'
-                    onChange={handleChange}
+                    name='service'
+                    onChange={(e) => handleService(e, {service})}
                 />
                 <label className="form-check-label" for="flexCheckDefault">
                     {service}
@@ -74,16 +109,16 @@ const Listing = () => {
     for (const item of listing_status) {
         status_options.push(
             <>
-            <div className="form-check">
+            <div className="form-check-inline">
                 <input
                     key={item.id}
                     id='flexCheckChecked'
                     value={item.id}
-                    type='checkbox'
+                    type='radio'
                     className='form-check-input'
                     placeholder={item.title}
-                    name='listing_status'
-                    onChange={handleChange}
+                    name='status'
+                    onChange={(e) => handleChange('status', e.target.value)}
                 />
                 <label className="form-check-label" for="flexCheckDefault">
                     {item.title}
@@ -96,13 +131,8 @@ const Listing = () => {
 
     return (
     <div id="listing" className='listing'>
-        <div className='text-center'>
-            <h1>Contact Me</h1>
-            <p>Please fill out the form if you are hiring or would like to contact me for project collaboration.</p>
-        </div>
-        <div className='container'>
-            <form>
-            {/* <form onSubmit={handleListingCreate}> */}
+        <div className='listing-container pt-5 mt-5'>
+            <form onSubmit={handleListingCreate}>
                 <div className='row'>
                     <div className='col-md-6 col-xs-12'>
                         <h2>Location Details</h2>
@@ -112,6 +142,7 @@ const Listing = () => {
                             className='form-control'
                             placeholder='Address Line One'
                             name='user_address'
+                            onChange={(e) => handleChange('address_line_one', e.target.value)}
                             required
                         />
                         <div className='line'></div>
@@ -120,6 +151,7 @@ const Listing = () => {
                             type='text'
                             className='form-control'
                             placeholder='Optional Address Line Two'
+                            onChange={(e) => handleChange('address_line_two', e.target.value)}
                             name='user_address_opt'
                         />
                         <div className='line'></div>
@@ -129,6 +161,7 @@ const Listing = () => {
                             className='form-control'
                             placeholder='City'
                             name='user_city'
+                            onChange={(e) => handleChange('city', e.target.value)}
                             required
                         />
                         <div className='line'></div>
@@ -138,6 +171,7 @@ const Listing = () => {
                             className='form-control'
                             placeholder='State'
                             name='user_state'
+                            onChange={(e) => handleChange('state', e.target.value)}
                             required
                         />
                         <div className='line'></div>
@@ -147,8 +181,19 @@ const Listing = () => {
                             className='form-control'
                             placeholder='Country'
                             name='user_country'
+                            onChange={(e) => handleChange('country', e.target.value)}
                             required
                         />
+                        <div className='line'></div>
+                        <input
+                            id='zip_code'
+                            type='text'
+                            className='form-control'
+                            placeholder='Zip-code'
+                            name='user_zip_code'
+                            onChange={(e) => handleChange('zip_code', e.target.value)}
+                            required
+                        /> 
                         <div className='line'></div>
                         <div className='row'>
                             <div className='col-md-6 col-xs-12'>
@@ -160,7 +205,7 @@ const Listing = () => {
                         <div className='line'></div>
                         <div className='row'>
                             <div className='col-md-6 col-xs-12'>
-                                <h2>Services Offered</h2>
+                                <h2>Listing Status</h2>
                             </div>
                         </div>
                         <div className='line'></div>
@@ -173,10 +218,15 @@ const Listing = () => {
                             className='form-control'
                             placeholder='Please enter your listing description here.'
                             name='body'
+                            onChange={(e) => handleChange('body', e.target.value)}
                             required
                         ></textarea>
                         <div className='line'></div>
-                        <button className='listing-create-btn btn btn-success' type='submit'>Create Listing</button>
+                        <button 
+                            className='listing-create-btn btn btn-success' 
+                            type='submit'>
+                            Create Listing
+                        </button>
                     </div>
                 </div>
             </form>  

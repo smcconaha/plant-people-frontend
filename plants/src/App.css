@@ -9,6 +9,25 @@
   text-align: center;
 }
 
+/*Listing Profile Results*/
+.listing-img {
+  width: 16rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  border: 1px solid black;
+}
+
+.listing-heading {
+  color:black;
+}
+
+.listing-photo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 /*Header*/
 
 .header-wrapper {

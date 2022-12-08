@@ -2,6 +2,8 @@ import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import usZips from 'us-zips';
+import { Link } from 'react-router-dom';
+import { useGlobalState } from "./../context/GlobalState";
 
 // function Map() {
 //     let [center, setCenter] = useState({lat: 38.0593, lng: -84.4921});
@@ -27,20 +29,13 @@ import usZips from 'us-zips';
 // }
 
 
-const Header = (props) => {
+const Header = (props) => {    
+    const [ state, dispatch ] = useGlobalState();
     const [message, setMessage] = useState('');
     const [search, setSearch] = useState({
         search: '', //this is the zip code entered by user
         listings: [], //this is the listings coming back
-    });
-
-    useEffect(() => {
-        axios.get(search + '/' + window.location.search).then((res) => {
-			const allListings = res.data;
-			setSearch({ listings: allListings });
-			console.log(res.data);
-        });
-    }, [setSearch]);    
+    }); 
     
     const handleChange = event => {
         setMessage(event.target.value);
@@ -48,11 +43,28 @@ const Header = (props) => {
         console.log('value is:', event.target.value);
       }; 
     
+    // async function handleSearch (e) {
+    //     e.preventDefault()
+    //     let options = {
+    //         data: {...listing},
+    //         url: `/listings/`,
+    //         method: 'GET',
+    //     } 
+    //     let resp = await request(options)
+    //     console.log(resp.data)
+    //     setListing(resp.data)
+    // }
+        
     let data = [...props.searchData]
     let location = []
     let standard = []
     let specialized = []
+    let listings = []
+    console.log(data)
     for (const entry of data) {
+        // if (len(entry.listings) !== 0) {
+        console.log(entry[3])    
+        // }
         if (entry.service_type === 'location') {
             location.push(
                 <>
@@ -97,26 +109,31 @@ const Header = (props) => {
                 <h2>Search Form Placeholder</h2>
                 <div className="card" style={{ width : '50rem' }}>
                     <div className="card-body">
-                        <h5 className="card-title">What customized car do your plants need?</h5>
-                        <p className="card-text">Do you need boarding or drop-in service?</p>
-                            {location}
-                        <p className="card-text">What standard services do you need?</p>
-                            {standard}
-                        <p className="card-text">What specialized services do you need?</p>
-                            {specialized}
                         <form>
                         {/* <form onSubmit={handleSearch}> */}
-                        <input
-                            id='zip_code'
-                            type='text'
-                            className='form-control'
-                            placeholder='Enter Zip Code'
-                            name='zip_code'
-                            onChange={(e) => handleChange('searchListings', e.target.value)}
-                            required
-                        />
+                            <h5 className="card-title">What customized car do your plants need?</h5>
+                            <p className="card-text">Do you need boarding or drop-in service?</p>
+                                {location}
+                            <p className="card-text">What standard services do you need?</p>
+                                {standard}
+                            <p className="card-text">What specialized services do you need?</p>
+                                {specialized}
+                            <input
+                                id='zip_code'
+                                type='text'
+                                className='form-control'
+                                placeholder='Enter Zip Code'
+                                name='zip_code'
+                                onChange={(e) => handleChange('searchListings', e.target.value)}
+                                required
+                            />
+                            <Link
+                                to="/result"
+                                className="searchBtn"
+                                type='submit'>
+                                Search Listings
+                            </Link>
                         </form>
-                        <a href="#" className="searchBtn">Search</a>
                     </div>
                 </div>
             </div>

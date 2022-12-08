@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 
 const Service = (props) => {
-    const baseURL = "https://8000-smcconaha-plantpeopleba-iy6u095z2ql.ws-us77.gitpod.io/config/services/"
+    const baseURL = "https://8000-smcconaha-plantpeopleba-iy6u095z2ql.ws-us78.gitpod.io/config/services/"
 
     const [data, setData] = useState([]);
 
@@ -12,6 +12,8 @@ const Service = (props) => {
             setData(response.data);
         });
     }, []);
+
+    
 
     let items = []
     for (const item of data) {

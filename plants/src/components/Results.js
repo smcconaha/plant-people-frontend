@@ -44,25 +44,6 @@ const Results = () => {
 
     let listingList = [];
 
-    // function handleClick () {
-    //     console.log(`this is your state from header search ${search.service}`)
-    // }
-    
-    /*TypeError: Invalid attempt to iterate non-iterable instance.
-        In order to be iterable, non-array objects must have a [Symbol.iterator]() method.*/
-    //Plan
-        //loop through entire db object
-    //and loop through the services of each object
-    //if the object includes all values from the inputsearch
-    //then push the data to the front end
-
-
-    // console.log(`this is input ${inputServiceSearch}`)
-    // console.log(typeof(inputServiceSearch))
-    
-    // console.log(`this is database ${listingData}`)
-    // console.log(typeof(listingData))
-
     let listingCount = 0;
     
     let filteredListings = listingData.length > 0 && search.service.length > 0 ? listingData.filter((l) => {
@@ -113,19 +94,3 @@ const Results = () => {
 }
 
 export default Results
-
-
-
-    //using a generator instead
-    // function makeRangeIterator(start = 0, end = Infinity, step = 1) {
-    //     let iterationCount = 0;
-    //     for (let i = start; i < end; i += step) {
-    //         iterationCount++;
-    //         yield i; //run until yield encountered
-    //     }
-    //     return iterationCount
-    // }
-    
-    // for (let person of search) {
-    //     console.log(person)
-    // }

@@ -1,70 +1,60 @@
-import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
-import axios from "axios";
 import React, {useEffect, useState} from "react";
-import usZips from 'us-zips';
 import { Link } from 'react-router-dom';
 import { useGlobalState } from "./../context/GlobalState";
 
-// function Map() {
-//     let [center, setCenter] = useState({lat: 38.0593, lng: -84.4921});
-//     const inputRef = useRef(null);
-//     function  handleClick() {
-//         let zipInput = inputRef.current.value;
-//         let longInput = (usZips[zipInput].longitude);
-//         let latInput = (usZips[zipInput].latitude);
-//         setCenter({lat: latInput, lng: longInput});
-//         console.log(`lat: ${latInput}, lng: ${longInput}`)
-//     }
-//     return (
-//     <>
-//         <div className="input-group mb-3">
-//         <input ref={inputRef} type="text" id="zipInput" className="form-control" placeholder="Zip Code" aria-label="Enter Zip Code" aria-describedby="button-addon2"/>
-//         <button onClick={handleClick} className="btn btn-outline-secondary" type="button" id="submitBtn">Search</button>
-//         </div>
-//         <GoogleMap zoom = {18} center = {center} mapContainerClassName = 'map-container'>
-//         <MarkerF position={center} />
-//         </GoogleMap>
-//     </>
-//     ) 
-// }
-
-
 const Header = (props) => {    
-    const [ state, dispatch ] = useGlobalState();
-    const [message, setMessage] = useState('');
-    const [search, setSearch] = useState({
-        search: '', //this is the zip code entered by user
-        listings: [], //this is the listings coming back
+    const [search, setSearch] = useGlobalState({
+        service: [],
+        zip_code: '',
     }); 
-    
-    const handleChange = event => {
-        setMessage(event.target.value);
-    
-        console.log('value is:', event.target.value);
-      }; 
-    
-    // async function handleSearch (e) {
-    //     e.preventDefault()
-    //     let options = {
-    //         data: {...listing},
-    //         url: `/listings/`,
-    //         method: 'GET',
-    //     } 
-    //     let resp = await request(options)
-    //     console.log(resp.data)
-    //     setListing(resp.data)
+
+//Service array functionality
+    function handleChange (e, service) {
+
+        let arr_service = []
+
+        if (search.service) {
+
+            arr_service = [...search.service]
+        }
+
+
+        if (e.target.checked) {
+            console.log(e.target.value)
+            arr_service.push(e.target.value)
+        } else {
+            let deleteIndex = arr_service.indexOf(e.target.value)
+            arr_service.splice(deleteIndex, 1)
+        }
+        setSearch({
+            "service": arr_service,
+            "zipcode": '',
+        })
+        console.log(search)
+    }
+
+    const handleInput = (key, value) => {
+        setSearch({
+            ...search,
+            [key]: value
+        })
+        console.log(search)
+    }
+
+    // const handleSearch = () => {
+    //     setSearch({
+    //         ...search,
+    //         [key]: value
+    //     })
+    //     console.log(search)
     // }
-        
+
     let data = [...props.searchData]
     let location = []
     let standard = []
     let specialized = []
-    let listings = []
-    console.log(data)
+
     for (const entry of data) {
-        // if (len(entry.listings) !== 0) {
-        console.log(entry[3])    
-        // }
         if (entry.service_type === 'location') {
             location.push(
                 <>
@@ -124,12 +114,13 @@ const Header = (props) => {
                                 className='form-control'
                                 placeholder='Enter Zip Code'
                                 name='zip_code'
-                                onChange={(e) => handleChange('searchListings', e.target.value)}
+                                onChange={(e) => handleInput('zip_code', e.target.value)}
                                 required
                             />
                             <Link
                                 to="/result"
                                 className="searchBtn"
+                                // onClick={(e) => handleSearch}
                                 type='submit'>
                                 Search Listings
                             </Link>

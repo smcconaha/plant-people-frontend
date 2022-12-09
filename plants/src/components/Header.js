@@ -3,46 +3,41 @@ import { Link } from 'react-router-dom';
 import { useGlobalState } from "./../context/GlobalState";
 
 const Header = (props) => {    
-    const [search, setSearch] = useGlobalState({
-        service: [],
-        zip_code: '',
-    }); 
+    const [state, dispatch] = useGlobalState(); 
+
+    useEffect(() => {
+        dispatch({
+            ...state,
+            service: [],
+        })
+    }, [])
 
 //Service array functionality
-    function handleChange (e, service) {
-
-        let arr_service = []
-
-        if (search.service) {
-
-            arr_service = [...search.service]
-        }
-
-
+    function handleChange (e) {        
         if (e.target.checked) {
-            console.log(e.target.value)
-            arr_service.push(e.target.value)
+            dispatch({
+                ...state,
+                service: [...state.service, e.target.value]
+            })
         } else {
-            let deleteIndex = arr_service.indexOf(e.target.value)
-            arr_service.splice(deleteIndex, 1)
+            let services = state.service.filter(s => s !== e.target.value)
+            dispatch({
+                ...state,
+                service: services
+            })
         }
-        setSearch({
-            "service": arr_service,
-            "zipcode": '',
-        })
-        console.log(search)
     }
 
     const handleInput = (key, value) => {
-        setSearch({
-            ...search,
+        dispatch({
+            ...state,
             [key]: value
         })
-        console.log(search)
+        console.log(state)
     }
 
     // const handleSearch = () => {
-    //     setSearch({
+    //     dispatch({
     //         ...search,
     //         [key]: value
     //     })

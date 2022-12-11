@@ -1,33 +1,9 @@
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import axios from "axios";
 import React, {useEffect, useState} from "react";
-import usZips from 'us-zips';
 import { useNavigate } from 'react-router-dom';
 import { useGlobalState } from "./../context/GlobalState";
-import _ from "lodash";
-
-// function Map() {
-//     let [center, setCenter] = useState({lat: 38.0593, lng: -84.4921});
-//     const inputRef = useRef(null);
-//     function  handleClick() {
-//         let zipInput = inputRef.current.value;
-//         let longInput = (usZips[zipInput].longitude);
-//         let latInput = (usZips[zipInput].latitude);
-//         setCenter({lat: latInput, lng: longInput});
-//         console.log(`lat: ${latInput}, lng: ${longInput}`)
-//     }
-//     return (
-//     <>
-//         <div className="input-group mb-3">
-//         <input ref={inputRef} type="text" id="zipInput" className="form-control" placeholder="Zip Code" aria-label="Enter Zip Code" aria-describedby="button-addon2"/>
-//         <button onClick={handleClick} className="btn btn-outline-secondary" type="button" id="submitBtn">Search</button>
-//         </div>
-//         <GoogleMap zoom = {18} center = {center} mapContainerClassName = 'map-container'>
-//         <MarkerF position={center} />
-//         </GoogleMap>
-//     </>
-//     ) 
-// }
+import MapContainer from "./MapContainer"
 
 const Results = () => {    
     const listingURL = "https://8000-smcconaha-plantpeopleba-iy6u095z2ql.ws-us78.gitpod.io/config/all/";
@@ -70,19 +46,28 @@ const Results = () => {
                         </div>
                     </div>
                 </div>
-        )
-    }
+            )
+        }   
     }
     return (
         <div className="container pt-5 mt-5">
             {filteredListings.length > 0 ? (
-                listingList
+                <div className="container">
+                    <div className="row">
+                        <div className="col-9">
+                            {listingList}
+                        </div>
+                        <div className="col-3">
+                            <MapContainer />
+                        </div>
+                    </div>    
+                </div>
                 ) : (
                     <div className="row text-center">
                         <h2>Sorry! There are no results matching that criteria</h2>
                         <button
                             onClick={() => navigate('/')}
-                            className="btn btn-lg btn-primary"
+                            className="btn btn-lg btn-success"
                         >
                             Return to Search
                         </button>

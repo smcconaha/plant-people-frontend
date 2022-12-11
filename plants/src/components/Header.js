@@ -88,38 +88,45 @@ const Header = (props) => {
         }
     }
     return (
-        <div className="header-wrapper">
-            <div className="main-info">
-                <h1>Find Plant Care Near You</h1>
-                <h2>Search Form Placeholder</h2>
-                <div className="card" style={{ width : '50rem' }}>
-                    <div className="card-body">
-                        <form>
-                        {/* <form onSubmit={handleSearch}> */}
-                            <h5 className="card-title">What customized car do your plants need?</h5>
-                            <p className="card-text">Do you need boarding or drop-in service?</p>
-                                {location}
-                            <p className="card-text">What standard services do you need?</p>
-                                {standard}
-                            <p className="card-text">What specialized services do you need?</p>
-                                {specialized}
-                            <input
-                                id='zip_code'
-                                type='text'
-                                className='form-control'
-                                placeholder='Enter Zip Code'
-                                name='zip_code'
-                                onChange={(e) => handleInput('zip_code', e.target.value)}
-                                required
-                            />
-                            <Link
-                                to="/result"
-                                className="searchBtn"
-                                // onClick={(e) => handleSearch}
-                                type='submit'>
-                                Search Listings
-                            </Link>
-                        </form>
+        <div className="header-wrapper pt-5 mt-5">
+            <div className="row">
+                <div className="container py-5">
+                    <div className="row">
+                        <div className="col-md-6 d-flex justify-content center">
+                            <div className="main-info pt-5 mt-5"> 
+                                <h1>Find Plant Care Near You</h1>
+                                <div className="card text-center">
+                                    <div className="search-card-body">
+                                        <form>
+                                        {/* <form onSubmit={handleSearch}> */}
+                                            <h5 className="search-card-title">What customized care do your plants need?</h5>
+                                            <p className="search-card-text">Do you need boarding or drop-in service?</p>
+                                                {location}
+                                            <p className="search-card-text">What standard services do you need?</p>
+                                                {standard}
+                                            <p className="search-card-text">What specialized services do you need?</p>
+                                                {specialized}
+                                            <input
+                                                id='zip_code'
+                                                type='text'
+                                                className='form-control'
+                                                placeholder='Enter Zip Code'
+                                                name='zip_code'
+                                                onChange={(e) => handleInput('zip_code', e.target.value)}
+                                                required
+                                            />
+                                            <Link
+                                                to="/result"
+                                                className="searchBtn"
+                                                // onClick={(e) => handleSearch}
+                                                type='submit'>
+                                                Search Listings
+                                            </Link>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

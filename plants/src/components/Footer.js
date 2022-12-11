@@ -1,50 +1,75 @@
 import React, {useEffect, useState} from "react";
 import { Link } from 'react-router-dom';
 import { useGlobalState } from "./../context/GlobalState";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  RedditShareButton,
+  RedditIcon,
+  LinkedinShareButton,
+  LinkedinIcon
+} from "react-share"
 
 function Footer () {
   return (
-    <footer className="py-5">
+    <div className="footer bg-dark">
+      <div className="container">
         <div className="row">
-          <div class="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
-              <li className="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-              <li className="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-              <li className="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-              <li className="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-              <li className="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-            </ul>
-          </div>
-
-          <div className="col-6 col-md-2 mb-3">
-          </div>
-
-          <div className="col-6 col-md-2 mb-3">
-          </div>
-
-          <div className="col-md-5 offset-md-1 mb-3">
-            <form>
-              <h5>Subscribe to our newsletter</h5>
-              <p>Monthly digest of what's new and exciting from us.</p>
-              <div className="d-flex flex-column flex-sm-row w-100 gap-2">
-                <label for="newsletter1" className="visually-hidden">Email address</label>
-                <input id="newsletter1" type="text" className="form-control" placeholder="Email address"/>
-                <button className="btn btn-primary" type="button">Subscribe</button>
+          <div className="col-lg-4 col-md-6 col-sm-6"></div>
+          <div className="col-lg-3 col-md-2 col-sm-6">
+            <div className="row">
+              <div className="col">
+                <a className="footer-nav">Home</a>
+                <br/>
+                <a className="footer-nav">Help</a>
               </div>
-            </form>
+              <div className="col-lg-5 col-md-5 col-sm-6 align-items-center">
+                <div className="d-flex justify-content-center" >
+                  <FacebookShareButton
+                    url={"#"}
+                    quote={"Full-stack developer"}
+                    hashtag="#developer"
+                  >
+                    <FacebookIcon className="mx-3" size={36}/>
+                  </FacebookShareButton>
+                  <TwitterShareButton
+                    url={"#"}
+                    quote={"Full-stack developer"}
+                    hashtag="#developer"
+                  >
+                    <TwitterIcon className="mx-3" size={36}/>
+                  </TwitterShareButton>
+                  <RedditShareButton
+                    url={"#"}
+                    quote={"Full-stack developer"}
+                    hashtag="#developer"
+                  >
+                    <RedditIcon className="mx-3" size={36}/>
+                  </RedditShareButton>
+                  <LinkedinShareButton
+                    url={"#"}
+                    quote={"Full-stack developer"}
+                    hashtag="#developer"
+                  >
+                    <LinkedinIcon className="mx-3" size={36}/>
+                  </LinkedinShareButton>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div className="row  justify-content-center">
+          <div className="col-lg-4 col-md-6 col-sm-6">
+            <p className="pt-3 text-center">
+              Copyright&copy;
+              {new Date().getFullYear()}&nbsp;Steven McConaha | All Rights Reserved
+            </p>
           </div>
         </div>
-
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-          <p>© 2022 Company, Inc. All rights reserved.</p>
-          <ul class="list-unstyled d-flex">
-            <li className="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use link:href="#twitter"></use></svg></a></li>
-            <li className="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use link:href="#instagram"></use></svg></a></li>
-            <li className="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use link:href="#facebook"></use></svg></a></li>
-          </ul>
         </div>
-    </footer>
+      </div>
+    </div>
   )
 }
 export default Footer

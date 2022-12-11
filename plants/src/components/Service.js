@@ -1,7 +1,16 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
-import "./../App.css"
+import "./../App.css";
+import boarding from '../images/boarding.png';
+import dropIn from '../images/dropin.png';
+import fertilize from '../images/fertilize.png';
+import herbicide from '../images/herbicide.png';
+import pesticide from '../images/pesticide.png';
+import prune from '../images/prune.png';
+import relocate from '../images/relocate.png';
+import sun from '../images/sun.png';
+import water from '../images/water.png';
 
 const Service = (props) => {
     const baseURL = "https://8000-smcconaha-plantpeopleba-iy6u095z2ql.ws-us78.gitpod.io/config/services/"
@@ -14,11 +23,14 @@ const Service = (props) => {
         });
     }, []);
 
+    const photoArray = [herbicide, prune, pesticide, fertilize, relocate, water, dropIn, boarding]
 
     let items = []
     for (const item of data) {
+        console.log(item.service_image)
         items.push(
             <>
+                <img className="service_img" src={item.service_image}></img>
                 <p key={item.name.id} className="serviceTitle" style={{ fontFamily: 'Libre Baskerville', fontWeight: "700"}}>{item.name}</p>
                 <p key={item.description.id} className="serviceDesc" style={{ fontFamily: 'Libre Baskerville', fontWeight: "500"}}>{item.description}</p>
             </>

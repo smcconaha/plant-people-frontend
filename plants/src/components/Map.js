@@ -19,7 +19,7 @@ export default function Map(props) {
     mapTypeId: "roadmap",
     labels: true
   };
-  const key = "AIzaSyBIyaeTQs5G9nBD2rTzyZafihxXw-KP7K0";
+  const key = "";
   const { setMap, children } = props;
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: key

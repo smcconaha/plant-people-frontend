@@ -29,7 +29,7 @@ const Service = (props) => {
         <Header searchData={data} />
 
         <div id="serviceContainer" className='container py-5'>
-            <div className='row'>
+            <div className='row justify-content-center'>
                 <div className='col-lg-6 col-xm-12'>
                     <h1 className='service' style={{ fontFamily: 'Raleway', fontWeight: "700"}}>Services Offered</h1>
                     {items}

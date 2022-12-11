@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { Link } from 'react-router-dom';
 import { useGlobalState } from "./../context/GlobalState";
+import "./../App.css"
 
 const Header = (props) => {    
     const [state, dispatch] = useGlobalState(); 
@@ -55,7 +56,7 @@ const Header = (props) => {
                 <>
                     <div className="form-check">
                         <input key={entry.id} onChange={handleChange} className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
-                        <label  key={entry.name.id} className="form-check-label" for="flexCheckDefault">
+                        <label  key={entry.name.id} className="form-check-label" for="flexCheckDefault" style={{ fontFamily: 'Libre Baskerville'}}>
                             {entry.name}
                         </label>
                     </div>
@@ -67,7 +68,7 @@ const Header = (props) => {
                 <>
                     <div className="form-check">
                         <input  key={entry.id} onChange={handleChange} className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
-                        <label  key={entry.name.id}  className="form-check-label" for="flexCheckDefault">
+                        <label  key={entry.name.id}  className="form-check-label" for="flexCheckDefault" style={{ fontFamily: 'Libre Baskerville'}}>
                             {entry.name}
                         </label>
                     </div>
@@ -79,7 +80,7 @@ const Header = (props) => {
                 <>
                     <div className="form-check">
                         <input  key={entry.id} onChange={handleChange} className="form-check-input" type="checkbox" id="flexCheckChecked" value={entry.name}/>
-                        <label  key={entry.name.id} className="form-check-label" for="flexCheckDefault">
+                        <label  key={entry.name.id} className="form-check-label" for="flexCheckDefault" style={{ fontFamily: 'Libre Baskerville'}}>
                             {entry.name}
                         </label>
                     </div>
@@ -94,22 +95,22 @@ const Header = (props) => {
                     <div className="row">
                         <div className="col-md-6 d-flex justify-content center">
                             <div className="main-info pt-5 mt-5"> 
-                                <h1>Find Plant Care Near You</h1>
+                                <h1 className="main-greet">Find Plant Care Near You</h1>
                                 <div className="card text-center">
                                     <div className="search-card-body">
                                         <form>
                                         {/* <form onSubmit={handleSearch}> */}
-                                            <h5 className="search-card-title">What customized care do your plants need?</h5>
-                                            <p className="search-card-text">Do you need boarding or drop-in service?</p>
+                                            <h5 className="search-card-title mt-1">What customized care do your plants need?</h5>
+                                            <p className="search-card-text mt-3">Do you need boarding or drop-in service?</p>
                                                 {location}
-                                            <p className="search-card-text">What standard services do you need?</p>
+                                            <p className="search-card-text mt-2">What standard services do you need?</p>
                                                 {standard}
-                                            <p className="search-card-text">What specialized services do you need?</p>
+                                            <p className="search-card-text mt-2">What specialized services do you need?</p>
                                                 {specialized}
                                             <input
                                                 id='zip_code'
                                                 type='text'
-                                                className='form-control'
+                                                className='form-control mt-2'
                                                 placeholder='Enter Zip Code'
                                                 name='zip_code'
                                                 onChange={(e) => handleInput('zip_code', e.target.value)}

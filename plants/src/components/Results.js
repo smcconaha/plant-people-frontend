@@ -35,10 +35,10 @@ const Results = () => {
                             <img src={item.images[0].profile_image} className="img-fluid rounded-start" alt=''/>
                         </div>
                         <div className="col-md-8">
-                            <div className="card-body">
+                            <div className="card-body result">
                                 <div className="fw-bold"> {listingCount += 1} </div>
                                 {console.log(`this is item ${item.listings[0].service}`)}
-                                <h5 className="card-title">{item.first_name}</h5>
+                                <h5 className="card-title fw-bold">{item.first_name}</h5>
                                 <h5 className="card-title">{item.listings[0].heading}</h5>
                                 {/* {console.log(item.reviews[0])} */}
                                 <p className="card-text">{item.listings[0].zip_code}</p>

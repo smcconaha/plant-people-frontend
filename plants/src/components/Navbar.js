@@ -18,8 +18,8 @@ function Navbar () {
   
   return (
     <div>
-    <nav className="navbar navbar-expand-lg bg-dark fixed-top p-0">
-        <div className="container">
+    <nav className="navbar navbar-expand-lg bg-dark p-0">
+        <div className="container-fluid">
             <img className="navbar-brand" src={largeLogo} alt width="100" height="80"></img>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

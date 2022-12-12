@@ -7,7 +7,6 @@
   --main-text-color: #FFFFFF;
   --green-accent-color: #357725;
   --dark-green-color: #17460b;
-  --background-color: 
 }
 
 .body {
@@ -32,12 +31,16 @@
   align-items: center;
 }
 
+/*Header*/
+.result {
+  font-family: 'Raleway', sans-serif;
+}
 
 /*Header*/
-
 .main-greet {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
+  /* background-color: #0e2a07; */
 }
 
 .header-wrapper {
@@ -76,6 +79,10 @@
   padding: 0.625rem 0.75rem 0.75rem 0.75rem;
   color: var(--main-text-color);
   margin: 2rem;
+}
+
+.search-card-body {
+  background-color: rgb(243, 237, 237);
 }
 
 .search-line {
@@ -146,6 +153,11 @@ nav ul li {
   border-color: green !important;
 }
 
+.service_img {
+  width: 60px !important;
+  height: 60px !important;
+}
+
 /*Profile*/
 
 .profile-img {
@@ -157,7 +169,11 @@ nav ul li {
 
 .profile-heading {
   color:black;
-  text-transform: uppercase;
+  font-family: 'Libre Baskerville', serif !important;
+}
+
+.listing-offer {
+  font-family: 'Libre Baskerville', serif !important;
 }
 
 .photo-wrap {

@@ -5,6 +5,7 @@ import { useGlobalState } from "../../context/GlobalState";
 import jwtDecode from "jwt-decode";
 import largeLogo from './../../images/full_logo.png';
 
+
 const Login = () => {
   let navigate = useNavigate();
 
@@ -29,7 +30,7 @@ const Login = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container pt-5 mt-5 pb-5">
       <div className="row justify-content-center">
         <div className="col-6">
           <div className="text-center pt-5 mt-5">
@@ -38,7 +39,7 @@ const Login = () => {
                 <form onSubmit={handleLogin}>
                   <img className="mb-4" src={largeLogo} alt width="200" height="150"></img>
                   <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
-                  <div className="form-floating">
+                  <div className="form-floating mt-4 mb-2">
                     <input
                       className="form-control"
                       placeholder="Username"
@@ -50,7 +51,7 @@ const Login = () => {
                     />
                     <label htmlFor="floatingInput">Username</label>
                   </div>
-                  <div classname="form-floating">
+                  <div className="form-floating">
                     <input
                       className="form-control"
                       placeholder="Password"
@@ -61,7 +62,7 @@ const Login = () => {
                       onChange={(e) => setPassword(e.target.value)}
                       required
                     />
-                    <label htmlFor="floatingPassword">Password</label>
+                    <label htmlFor="floatingPassword"></label>
                   </div>
                   <input className="w-100 btn btn-lg btn-success"
                     type="submit"

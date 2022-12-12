@@ -95,8 +95,10 @@ const Header = (props) => {
                     <div className="row">
                         <div className="col-md-6 d-flex justify-content center">
                             <div className="main-info pt-5 mt-5"> 
-                                <h1 className="main-greet">Find Plant Care Near You</h1>
-                                <div className="card text-center">
+                                <div className="container-fluid main-greet p-2">
+                                    <h1 className="main-greet mt-2">Find Plant Care Near You</h1>
+                                </div>
+                                <div className="card text-center mt-4">
                                     <div className="search-card-body">
                                         <form>
                                         {/* <form onSubmit={handleSearch}> */}

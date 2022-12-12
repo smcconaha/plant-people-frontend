@@ -21,9 +21,9 @@ function Footer () {
           <div className="col-lg-3 col-md-2 col-sm-6">
             <div className="row">
               <div className="col">
-                <a className="footer-nav">Home</a>
+                <Link to="/" className="footer-nav">Home</Link>
                 <br/>
-                <a className="footer-nav">Help</a>
+                <Link to="help" className="footer-nav">Help</Link>
               </div>
               <div className="col-lg-5 col-md-5 col-sm-6 align-items-center">
                 <div className="d-flex justify-content-center" >

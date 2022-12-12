@@ -32,20 +32,20 @@ export default function Map(props) {
 
     return (
       <>
-        <div className="input-group mb-3">
-          <input ref={inputRef} type="text" id="zipInput" className="form-control" placeholder="Zip Code" aria-label="Enter Zip Code" aria-describedby="button-addon2"/>
-          <button onClick={handleClick} className="btn btn-outline-secondary" type="button" id="submitBtn">Search</button>
+        <div className="input-group mb-1">
+          <input ref={inputRef} type="text" id="zipInput" className="form-control mt-0 mb-0" placeholder="Enter Zip Code" aria-label="Enter Zip Code" aria-describedby="button-addon2"/>
+          <button onClick={handleClick} className="btn btn-success" type="button" id="submitBtn">Search</button>
         </div>
         <GoogleMap
           mapContainerStyle={{
-            height: "350px",
-            width: "550px"
+            height: "46rem",
+            width: "21rem",
+            overflow: "hidden"
           }}
           zoom={1}
           center={defaultCenter}
           options={options}
           onLoad={loadHandler}
-          mapContainerClassName = 'map-container'
         >
           <MarkerF position={defaultCenter} />
           {children}

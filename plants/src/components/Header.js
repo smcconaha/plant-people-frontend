@@ -89,7 +89,7 @@ const Header = (props) => {
         }
     }
     return (
-        <div className="header-wrapper pt-5 mt-5">
+        <div className="header-wrapper">
             <div className="row">
                 <div className="container py-5">
                     <div className="row">
@@ -109,7 +109,7 @@ const Header = (props) => {
                                                 {standard}
                                             <p className="search-card-text mt-2">What specialized services do you need?</p>
                                                 {specialized}
-                                            <input
+                                            {/* <input
                                                 id='zip_code'
                                                 type='text'
                                                 className='form-control mt-2'
@@ -117,7 +117,7 @@ const Header = (props) => {
                                                 name='zip_code'
                                                 onChange={(e) => handleInput('zip_code', e.target.value)}
                                                 required
-                                            />
+                                            /> */}
                                             <Link
                                                 to="/result"
                                                 className="searchBtn"

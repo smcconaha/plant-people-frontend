@@ -17,7 +17,7 @@ export default function MapContainer() {
   const [map, setMap] = useState(null);
 
   function mapFitBounds() {
-    console.log("mapFitBounds:map> ", map);
+    // console.log("mapFitBounds:map> ", map);
     if (!map) return;
 
     const bounds = new google.maps.LatLngBounds();

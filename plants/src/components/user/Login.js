@@ -30,14 +30,14 @@ const Login = () => {
   }
 
   return (
-    <div className="container pt-5 mt-5 pb-5">
+    <div className="container pt-5 mt-3 mb-4 pb-5">
       <div className="row justify-content-center">
         <div className="col-6">
           <div className="text-center pt-5 mt-5">
             <body className="text-center">
               <main className="form-signin w-100 m-auto">
                 <form onSubmit={handleLogin}>
-                  <img className="mb-4" src={largeLogo} alt width="200" height="150"></img>
+                  <img className="mb-4" src={largeLogo} alt width="300" height="200"></img>
                   <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
                   <div className="form-floating mt-4 mb-2">
                     <input

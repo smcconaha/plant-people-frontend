@@ -3,7 +3,8 @@ import axios from "axios";
 import React, {useEffect, useState} from "react";
 import { useNavigate } from 'react-router-dom';
 import { useGlobalState } from "./../context/GlobalState";
-import MapContainer from "./MapContainer"
+import MapContainer from "./MapContainer";
+import _ from "lodash";
 
 const Results = () => {    
     const listingURL = "https://8000-smcconaha-plantpeopleba-iy6u095z2ql.ws-us78.gitpod.io/config/all/";
@@ -11,7 +12,6 @@ const Results = () => {
     let navigate = useNavigate()
 
     const [search, ] = useGlobalState()
-    
     useEffect(() => {
         axios.get(listingURL).then((response) => {
             setListingData(response.data);
@@ -36,12 +36,13 @@ const Results = () => {
                         </div>
                         <div className="col-md-8">
                             <div className="card-body result">
-                                <div className="fw-bold"> {listingCount += 1} </div>
-                                {console.log(`this is item ${item.listings[0].service}`)}
+                                <div className="fw-bold"> {listingCount += 1}. </div>
                                 <h5 className="card-title fw-bold">{item.first_name}</h5>
-                                <h5 className="card-title">{item.listings[0].heading}</h5>
-                                {/* {console.log(item.reviews[0])} */}
-                                <p className="card-text">{item.listings[0].zip_code}</p>
+                                <p className="card-text"><strong>Location: </strong> {item.listings[0].zip_code}</p>
+                                <p className="card-title">{item.listings[0].heading}</p>
+                                {/* <p className="card-title">{item.listings[0].body}</p> */}
+                                <p className="card-review"><strong>Latest Review: </strong> {item.reviews[0].title}</p>
+                                <button className="btn btn-lg btn-success fs-6">Contact</button>
                             </div>
                         </div>
                     </div>
@@ -50,18 +51,16 @@ const Results = () => {
         }   
     }
     return (
-        <div className="container pt-5 mt-5">
+        <div className="container pt-5 ml-.3">
             {filteredListings.length > 0 ? (
-                <div className="container">
                     <div className="row">
-                        <div className="col-9">
+                        <div className="col-8">
                             {listingList}
                         </div>
-                        <div className="col-3">
+                        <div className="col-4">
                             <MapContainer />
                         </div>
                     </div>    
-                </div>
                 ) : (
                     <div className="row text-center">
                         <h2>Sorry! There are no results matching that criteria</h2>

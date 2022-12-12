@@ -35,7 +35,7 @@ export default function MapContainer() {
   }, [map]);
 
   return (
-    <div>
+    <div className="text-center">
       <Map setMap={setMap}>
         <MarkerClusterer>
           {(clusterer) =>

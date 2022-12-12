@@ -31,12 +31,15 @@
   align-items: center;
 }
 
+.result-cont {
+  background-color: var(--dark-green-color);
+}
+
 /*Header*/
 .result {
   font-family: 'Raleway', sans-serif;
 }
 
-/*Header*/
 .main-greet {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -253,4 +256,7 @@ font-family: 'Libre Baskerville', serif !important;
 
 .card-text-help {
   font-family: 'Libre Baskerville', serif !important;
+}
+body {
+  
 }

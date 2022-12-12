@@ -32,14 +32,14 @@ export default function Map(props) {
 
     return (
       <>
-        <div className="input-group mb-1">
+        <div className="input-group mb-1" style={{width: '24rem'}}>
           <input ref={inputRef} type="text" id="zipInput" className="form-control mt-0 mb-0" placeholder="Enter Zip Code" aria-label="Enter Zip Code" aria-describedby="button-addon2"/>
           <button onClick={handleClick} className="btn btn-success" type="button" id="submitBtn">Search</button>
         </div>
         <GoogleMap
           mapContainerStyle={{
             height: "46rem",
-            width: "21rem",
+            width: "24rem",
             overflow: "hidden"
           }}
           zoom={1}

@@ -5,15 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import { useGlobalState } from "./../context/GlobalState";
 import MapContainer from "./MapContainer";
 import _ from "lodash";
+import { API_URL } from "../services/auth.constants";
 
 const Results = () => {
-    const listingURL = "https://8000-smcconaha-plantpeopleba-iy6u095z2ql.ws-us78.gitpod.io/config/all/";
+    // const listingURL = "https://8000-smcconaha-plantpeopleba-iy6u095z2ql.ws-us78.gitpod.io/config/all/";
     const [listingData, setListingData] = useState([]);
     let navigate = useNavigate()
 
     const [search,] = useGlobalState()
     useEffect(() => {
-        axios.get(listingURL).then((response) => {
+        axios.get(API_URL + 'all/').then((response) => {
             setListingData(response.data);
         });
     }, []);
@@ -32,7 +33,7 @@ const Results = () => {
                 <div className="card mb-3 shadow">
                     <div className="row g-0">
                         <div className="col-md-4">
-                            <img src={item.images[0].profile_image} className="img-fluid rounded-start" alt='' />
+                            <img src={item.images[0].profile_image} className="img-fluid rounded-start" alt='user profile image' />
                         </div>
                         <div className="col-md-8">
                             <div className="card-body result">

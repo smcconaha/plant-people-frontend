@@ -1,8 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import request from '../services/api.request'
+import request from '../services/api.request';
+import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from 'react-router-dom';
 
 const Listing = () => {
+    let navigate = useNavigate();
     
     const [listing, setListing] = useState({
         heading: "",
@@ -46,6 +49,9 @@ const Listing = () => {
         let resp = await request(options)
         console.log(resp.data)
         setListing(resp.data)
+
+        toast.success("Thank you for creating a listing, it should be posted soon!")
+        navigate('/');
     }
 
 

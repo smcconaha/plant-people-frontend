@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import AuthService from "../../services/auth.service";
 import leafImg from './../../images/leafimg.png';
+import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+  let navigate = useNavigate();
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -22,7 +25,10 @@ const Register = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    AuthService.register(user);
+    AuthService.register(user)
+    .catch((error) => toast.error("Please re-enter your registration information"));
+    toast.success("Thank you for registering!")
+    navigate('/login');
   }
 
   return (
@@ -131,6 +137,7 @@ const Register = () => {
             </div>
         </div>
       </div>
+      <Toaster />
     </div>
   )
 }

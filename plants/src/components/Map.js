@@ -3,6 +3,7 @@ import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import usZips from 'us-zips';
 
 
+
 export default function Map(props) {
   let [defaultCenter, setDefaultCenter] = useState({lat: 38.0593, lng: -84.4921});
   const inputRef = useRef(null);
@@ -19,10 +20,11 @@ export default function Map(props) {
     mapTypeId: "roadmap",
     labels: true
   };
-  const key = "";
+  const key = process.env.REACT_APP_MAP_API;
+  
   const { setMap, children } = props;
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: key
+    googleMapsApiKey: "AIzaSyBIyaeTQs5G9nBD2rTzyZafihxXw-KP7K0"
   });
 
   const renderMap = () => {

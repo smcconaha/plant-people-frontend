@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useGlobalState } from "../../context/GlobalState";
 import jwtDecode from "jwt-decode";
 import largeLogo from './../../images/full_logo.png';
+import toast, { Toaster } from "react-hot-toast";
 
 
 const Login = () => {
@@ -26,7 +27,8 @@ const Login = () => {
           currentUser: data,
         });
         navigate('/');
-      });
+      })
+      .catch((error) => toast.error("Incorrect username or password, please try again"));
   }
 
   return (
@@ -37,7 +39,7 @@ const Login = () => {
             <body className="text-center">
               <main className="form-signin w-100 m-auto">
                 <form onSubmit={handleLogin}>
-                  <img className="mb-4" src={largeLogo} alt width="300" height="200"></img>
+                  <img className="mb-4" src={largeLogo} width="300" height="200"></img>
                   <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
                   <div className="form-floating mt-4 mb-2">
                     <input
@@ -69,6 +71,7 @@ const Login = () => {
                     value="Sign in"
                   />
                 </form>
+                <Toaster />
               </main>
             </body>
           </div>

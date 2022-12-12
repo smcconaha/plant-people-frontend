@@ -11,6 +11,7 @@ import prune from '../images/prune.png';
 import sun from '../images/sun.png';
 import water from '../images/water.png';
 import fungi from '../images/fungi.png';
+import { API_URL } from '../services/auth.constants';
 
 const Service = (props) => {
     const baseURL = "https://8000-smcconaha-plantpeopleba-iy6u095z2ql.ws-us78.gitpod.io/config/services/"
@@ -18,7 +19,7 @@ const Service = (props) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get(baseURL).then((response) => {
+        axios.get(API_URL + 'services/').then((response) => {
             setData(response.data);
         });
     }, []);
@@ -28,7 +29,6 @@ const Service = (props) => {
     let imgCount = 0
     let items = []
     for (const item of data) {
-        console.log(item.service_image)
         items.push(
             <div className="row justify-content-center align-content-center">
                 <div className="col-3">

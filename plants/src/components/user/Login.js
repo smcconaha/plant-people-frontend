@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import AuthService from "../../services/auth.service";
 import { useNavigate } from 'react-router-dom';
 import { useGlobalState } from "../../context/GlobalState";
@@ -20,12 +20,12 @@ const Login = () => {
     AuthService
       .login(username, password)
       .then(async (resp) => {
-        let data = jwtDecode(resp.access)
+        let data = jwtDecode(resp.access);
         await dispatch({
           currentUserToken: resp.access,
-          currentUser: data
-        })
-        navigate('/')
+          currentUser: data,
+        });
+        navigate('/');
       });
   }
 

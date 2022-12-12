@@ -5,6 +5,7 @@ import request from '../services/api.request'
 const Listing = () => {
     
     const [listing, setListing] = useState({
+        heading: "",
         body: "",
         service: [],
         address_line_one: "",
@@ -131,7 +132,7 @@ const Listing = () => {
 
     return (
     <div id="listing" className='listing'>
-        <div className='listing-container pt-5 mt-5'>
+        <div className='listing-container pt-3 m-2'>
             <form onSubmit={handleListingCreate}>
                 <div className='row'>
                     <div className='col-md-6 col-xs-12'>
@@ -212,6 +213,16 @@ const Listing = () => {
                         {status_options}
                     </div>
                     <div className='col-md-6 col-xs-12'>
+                        <input
+                            id='heading'
+                            type='text'
+                            className='form-control'
+                            placeholder='Heading'
+                            name='user_heading'
+                            onChange={(e) => handleChange('heading', e.target.value)}
+                            required
+                        /> 
+                        <div className='line'></div>
                         <textarea
                             id='body'
                             type="text"

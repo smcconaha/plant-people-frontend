@@ -243,3 +243,14 @@ font-family: 'Libre Baskerville', serif !important;
 .footer {
   padding: 1rem;
 }
+
+/*Help*/
+
+.card-title-help {
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 700;
+}
+
+.card-text-help {
+  font-family: 'Libre Baskerville', serif !important;
+}

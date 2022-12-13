@@ -28,28 +28,28 @@ function Footer () {
               <div className="col-lg-5 col-md-5 col-sm-6 align-items-center">
                 <div className="d-flex justify-content-center" >
                   <FacebookShareButton
-                    url={"#"}
+                    url={"https://plant-people-1b6bf.web.app/"}
                     quote={"Full-stack developer"}
                     hashtag="#developer"
                   >
                     <FacebookIcon className="mx-3" size={36}/>
                   </FacebookShareButton>
                   <TwitterShareButton
-                    url={"#"}
+                    url={"https://plant-people-1b6bf.web.app/"}
                     quote={"Full-stack developer"}
                     hashtag="#developer"
                   >
                     <TwitterIcon className="mx-3" size={36}/>
                   </TwitterShareButton>
                   <RedditShareButton
-                    url={"#"}
+                    url={"https://plant-people-1b6bf.web.app/"}
                     quote={"Full-stack developer"}
                     hashtag="#developer"
                   >
                     <RedditIcon className="mx-3" size={36}/>
                   </RedditShareButton>
                   <LinkedinShareButton
-                    url={"#"}
+                    url={"https://plant-people-1b6bf.web.app/"}
                     quote={"Full-stack developer"}
                     hashtag="#developer"
                   >
